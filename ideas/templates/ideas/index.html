@@ -1,0 +1,27 @@
+{% extends "ideas/base.html" %}
+
+{% block content %}
+
+    {% if recent_ideas %}
+        <ol>
+            {% for idea in recent_ideas %}
+                <li><a href="#">{{ idea.title }}</a></li>
+            {% endfor %}
+        </ol>
+
+    {% else %}
+        <strong>There are no ideas...</strong>
+    {% endif %}
+
+    {% if medium_list %}
+        <ul>
+            {% for medium in medium_list %}
+                <li><a href="#">{{ medium.name }}</a></li>
+            {% endfor %}
+        </ul>
+
+    {% else %}
+        <strong>There are no categories...</strong>
+
+    {% endif %}
+{% endblock %}
