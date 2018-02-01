@@ -1,3 +1,10 @@
 from django.contrib import admin
+from ideas.models import Medium, Idea
 
-# Register your models here.
+
+class MediumAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug':('name',)}
+
+
+admin.site.register(Medium, MediumAdmin)
+admin.site.register(Idea)
